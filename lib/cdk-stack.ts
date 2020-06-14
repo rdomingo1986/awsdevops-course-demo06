@@ -19,10 +19,6 @@ export class CdkStack extends cdk.Stack {
       partitionKey: { name: 'id', type: dynamodb.AttributeType.STRING }
     });
 
-    const table2 = new dynamodb.Table(this, 'Courses2', {
-      partitionKey: { name: 'id', type: dynamodb.AttributeType.STRING }
-    });
-
     const getAllItemsFunction = new lambda.Function(this, 'get-all-items', {
       runtime: lambda.Runtime.NODEJS_12_X,    
       code: lambda.Code.fromAsset('lambda'),  
